@@ -21,8 +21,6 @@ export class HomePage {
   constructor() { }
 
   async validate(focus = false) {
-    //await this.delay(100); // Wait for username to update
-    console.log(`"${this.username}"`);
     this.usernameHasError = false;
     this.usernameError = '';
     if (this.username.length <= 3) {
@@ -39,16 +37,10 @@ export class HomePage {
         this.usernameControl.setFocus();
       }
     }
-
   }
 
   submit(e: Event) {
     e.preventDefault();
     this.validate(true);
-
-  }
-
-  private delay(ms: number): Promise<void> {
-    return new Promise((resolve) => setTimeout(() => resolve(), ms));
   }
 }
